@@ -72,3 +72,13 @@ Le module `src` contient le code source de l'application. Le fichier `main.py` e
 ### tests
 
 Le module `tests` contient les tests unitaires pour l'application. Le fichier `test_main.py` contient des tests pour vérifier le bon fonctionnement de l'application.
+
+## CI/CD
+
+Le projet utilise des GitHub Actions pour la CI/CD. Trois workflows sont configurés :
+
+| Workflow | Description | Triggers |
+| --- | --- | --- |
+| `black_formatting.yml` | Vérifie le formatage du code avec Black | `push`, `pull_request` |
+| `docker_publish.yml` | Construit l'image Docker et la pousse sur Docker Hub | `push` sur la branche `master` |
+| `unit_test.yml` | Exécute les tests unitaires | `pull_request` |
